@@ -14,7 +14,7 @@ module.exports = async () => {
 
 
     Object.keys(argv).forEach(arg => {
-        arguments += `--${arg}="${argv[arg]}" `
+        arguments += `--${arg}='${argv[arg]}' `
     });
     try {
         const resposne = await execute('npm list -g --depth 0');
@@ -27,14 +27,12 @@ module.exports = async () => {
                 if (package.includes(`lb4-${command}`)) { exists = true; }
             });
             if (!exists) await execute(`npm install -g lb4-${command}`);
-            console.log(`runnning lb4-${command} ${arguments}`);
             await execute(`lb4-${command} ${arguments}`);
         } else {
             packages.forEach(package => {
                 if (package.includes('@loopback/cli')) { exists = true; }
             });
             if (!exists) await execute('npm install -g @loopback/cli');
-            console.log(`runnning lb4 ${command} ${arguments}`);
             await execute(`lb4 ${command} ${arguments}`);
         }
     } catch (error) {
