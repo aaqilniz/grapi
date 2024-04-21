@@ -1,0 +1,21 @@
+{
+  "name": "grapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "bin": {
+    "grapi": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grapi",
+    "cli"
+  ],
+  "author": "Muhammad Aaqil",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
