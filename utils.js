@@ -14,7 +14,6 @@ module.exports.execute = async (command, message) => {
         console.log(executed.error);
         throw Error(`failed to execute ${command}`);
     }
-    console.log('OK');
     return executed;
 }
 
